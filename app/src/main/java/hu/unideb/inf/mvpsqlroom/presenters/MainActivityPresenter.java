@@ -209,7 +209,7 @@ public class MainActivityPresenter implements IMainActivityPresenter, PresenterT
                     String messsageText = bundle.getString(Util.MESSAGE_BODY, Util.EMPTY_MESSAGE);
                     Log.e("", messsageText);
                     String bundle1 = (String) msg.obj;
-                    iMainActivityViewWeakReference.get().refreshUiWithMessage(messsageText);
+                    iMainActivityViewWeakReference.get().refreshUiWithObject(msg.obj);
                 default:
                     break;
             }

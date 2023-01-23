@@ -43,11 +43,14 @@ public class MainActivityView extends AppCompatActivity implements IMainActivity
     }
 
     @Override
-    public void refreshUiWithObject(ResultClass<Object> result) {
+    public void refreshUiWithObject(Object result) {
         if(textViewMy2 != null){
-            String s = String.valueOf(result.getResultModel());
-            Log.e("dddd", result.getResultModel().toString());
-            textViewMy2.setText(s);
+
+            if(result instanceof ResultClass){
+                ResultClass s = (ResultClass) result;
+                Log.e("dddd", s.getResultModel().toString());
+                textViewMy2.setText(s.toString());
+            }
         }
     }
 }
